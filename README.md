@@ -5,7 +5,7 @@ The project name of this exercise is **Files**.
 The purpose of this assignment is for you to write code that reads data from a file. 
 
 The first thing you will need to do is accept the invitation to this assignment
-from GitHub Classroom. You can click [here](https://classroom.github.com/a/aKz-Pr13) to accept the invitation. 
+from GitHub Classroom. You can click [here](https://classroom.github.com/a/CcLGQF5m) to accept the invitation. 
 
 Be sure that you accept the invitation first and use the URL from
 the your new project when you clone it in Intellij.
