@@ -7,40 +7,60 @@
 
 namespace edu { namespace vcccd { namespace vc { namespace csv30 {
     FileReader::FileReader(const std::string &fileName) {
-        // Put your code here
+
+        std::ifstream fin(fileName);
+
+        while (!fin.eof()) {
+            std::string line;
+            std::getline(fin, line);
+            _lines.push_back(line);
+        }
     }
 
     const std::vector<std::string> &FileReader::getLines() const {
-        // Put your code here
+        return _lines;
     }
 
     size_t FileReader::getLineCount() const {
-        // Put your code here
-        return 0;
+        return _lines.size();
     }
 
     const std::string &FileReader::getLine(size_t line) const {
-        // Put your code here
-        return "";
+        return _lines[line];
     }
 
     void FileReader::deleteLine(size_t line) {
-        // Put your code here
+       _lines.erase( _lines.begin ()+line);
     }
 
     std::string FileReader::toUpperCaseLine(size_t lineNo) const {
-        // Put your code here
-        return "";
+        auto l = _lines[lineNo];
+        for (char &c : l) {
+            c = toupper(c);
+
+        }
+        return l;
     }
 
     std::string FileReader::toLowerCaseLine(size_t lineNo) const {
-        // Put your code here
-        return "";
+        auto l = _lines[lineNo];
+        for (char &c : l) {
+            c = tolower(c);
+
+        }
+         return l;
     }
 
     bool FileReader::operator==(const FileReader &rhs) {
-        // Put your code here
-        return true;
+        if (getLineCount() != rhs.getLineCount()) {
+            return false;
+        }
+        for (int i = 0; i < getLineCount(); i++) {
+            if (getLine(i) != rhs.getLine(i)) {
+                return false;
+            }
+
+            return true;
+        }
     }
 }}}}
-
